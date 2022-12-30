@@ -16,10 +16,10 @@ public class Movie {
     private String title;
 
     @Column(name = "submitter", length = 100)
-    private String submitter = "Anonymous";
+    private String submitter;
 
     @Column(name = "poster_url", columnDefinition = "text")
-    private String posterUrl = "https://placedog.net/400/400";
+    private String posterUrl;
 
     public Movie(){
         super();
@@ -45,5 +45,13 @@ public class Movie {
 
     public String getPosterUrl(){
         return posterUrl;
+    }
+
+    public void setSubmitter(String submitter){
+        this.submitter = submitter;
+    }
+
+    public void setPosterUrl(String posterUrl){
+        this.posterUrl = posterUrl;
     }
 }

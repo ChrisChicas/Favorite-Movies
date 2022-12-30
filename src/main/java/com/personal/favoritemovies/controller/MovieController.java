@@ -3,6 +3,7 @@ package com.personal.favoritemovies.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +17,7 @@ import com.personal.favoritemovies.data.Movie;
 import com.personal.favoritemovies.service.MovieService;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/movies")
 public class MovieController {
     @Autowired
@@ -33,11 +35,25 @@ public class MovieController {
 
     @PostMapping
     public Movie create(@RequestBody Movie movie){
+        if(movie.getSubmitter().equals("")){
+            movie.setSubmitter("Anonymous");
+        }
+
+        if(movie.getPosterUrl().equals("")){
+            movie.setPosterUrl("https://placedog.net/400/400");
+        }
         return movieService.addMovie(movie);
     }
 
     @PutMapping("/{id}")
     public Movie update(@RequestBody Movie movie){
+        if(movie.getSubmitter().equals("")){
+            movie.setSubmitter("Anonymous");
+        }
+
+        if(movie.getPosterUrl().equals("")){
+            movie.setPosterUrl("https://placedog.net/400/400");
+        }
         return movieService.updateMovie(movie);
     }
 
