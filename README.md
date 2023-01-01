@@ -24,7 +24,7 @@ spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation= true
 - Copy and paste the same `application.properties` into the `bin/main` folder
 - Run the Spring Boot application under `src/main/.../FavoriteMoviesApplication.java`
 - In a new terminal, run `cd front-end` to move into the front-end folder
-- Run `npm i` or `npm install` to install all of the front-end dependencies
+- Run `npm i` or `npm install` to install all the front-end dependencies
 - Create a `.env` file in the `front-end` folder with the following:
 ```
 REACT_APP_API=http://localhost:8080
@@ -39,7 +39,7 @@ This application only has one Movie data model. Movie has four columns:
 - posterUrl (String, column defined as Text type)
 
 ## Front-End Routes
-These are all of the React app's routes:
+These are all the React app's routes:
 
 | Route | Purpose |
 | ----- | ----- |
@@ -50,7 +50,7 @@ These are all of the React app's routes:
 | /movies/:movieId/edit | Form to edit an existing movie |
 
 ## Back-End Routes
-These are all of the Spring Boot controller routes:
+These are all the Spring Boot controller routes:
 
 | Method | Path | Purpose |
 | ----- | ------ | ------ |
@@ -58,5 +58,5 @@ These are all of the Spring Boot controller routes:
 | GET | /movies | Returns a list of all movies on the database |
 | GET | /movies/{id} | Finds and returns a specific movie instance by id |
 | POST | /movies | Saves a movie instance to the database |
-| PUT | /movies/{id} | Updates a movie instance in the database (Note: movie instance must include id in order to properly update an existing movie) |
+| PUT | /movies/{id} | Updates a movie instance in the database (Note: movie instance must include id to properly update an existing movie) |
 | DELETE | /movies/{id} | Finds and deletes a movie instance from the database by id |
