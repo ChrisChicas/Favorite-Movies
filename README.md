@@ -31,4 +31,32 @@ REACT_APP_API=http://localhost:8080
 ```
 - Run `npm start` to run the React app
 
-## 
+## Database Table/Model
+This application only has one Movie data model. Movie has four columns:
+- id (Long)
+- title (String, max length = 200)
+- submitter (String, max length = 100)
+- posterUrl (String, column defined as Text type)
+
+## Front-End Routes
+These are all of the React app's routes:
+
+| Route | Purpose |
+| ----- | ----- |
+| / | Home Page |
+| /movies | Movie List Page |
+| /movies/:movieId | View a specific movie's details + edit/delete buttons |
+| /movies/new | Form to add a new movie |
+| /movies/:movieId/edit | Form to edit an existing movie |
+
+## Back-End Routes
+These are all of the Spring Boot controller routes:
+
+| Method | Path | Purpose |
+| ----- | ------ | ------ |
+| GET | / | Sends welcome message |
+| GET | /movies | Returns a list of all movies on the database |
+| GET | /movies/{id} | Finds and returns a specific movie instance by id |
+| POST | /movies | Saves a movie instance to the database |
+| PUT | /movies/{id} | Updates a movie instance in the database (Note: movie instance must include id in order to properly update an existing movie) |
+| DELETE | /movies/{id} | Finds and deletes a movie instance from the database by id |
