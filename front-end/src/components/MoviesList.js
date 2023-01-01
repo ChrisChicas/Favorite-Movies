@@ -28,7 +28,9 @@ export default function Movies(){
     if(movies.length === 0){
         return(
             <div>
-                <p>No movies added yet!</p>
+                <Link to={"/"}>Home</Link>
+                <p>No movies added yet!</p>            
+                <Link to={`/movies/new`}>Add Movie!</Link>
             </div>
         )
     }
